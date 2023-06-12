@@ -29,6 +29,7 @@ You need to have access to each of these accounts, you will be logging in to the
 Choose one account to serve as a management account. For me I have a personal account that is my ride or die AWS account. It's the first account I ever created and I have a lot of stuff in there. Throughout this guide I will refer to that account as the main account or management account. I'll refer to my other accounts as secondary accounts.
 
 ![Prerequisites to get started](./image_assets/2prerequisites.png)
+_Note: [It's up for debate if AWS account numbers are sensitive information](https://www.lastweekinaws.com/blog/are-aws-account-ids-sensitive-information/), but I still blur them out because it gives me mental peace 🤷‍♀️._
 
 This guide is about enabling Identity Center to manage multiple AWS accounts. For this we need an [AWS Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html?icmpid=docs_sso_console).
 
@@ -48,13 +49,16 @@ That's all fine with me, so let's get started. If you are following along, make 
 ![Find the AWS Organizations service](./image_assets/3find_organizations.png)
 
 ![Create a new organization](./image_assets/4create_organization.png)
+![The new organization](./image_assets/5my_new_organization.png)
 
 ## Step 2: Add your accounts to the organization
 
+![Add account to organization](./image_assets/6add_aws_account.png)
 ![Adding accounts to the organization](./image_assets/7add_accounts_to_organization.png)
 ![Confirm sending invitations to the accounts](./image_assets/8add_accounts_to_org.png)
 
 In the AWS Organizations console you can confirm the accounts that have pending invitations to the org.
+![Confirm accounts with open invitations](./image_assets/9open_invitations_in_org.png)
 
 Each secondary account needs to accept the invitation. You can do this in two ways:
 
@@ -68,6 +72,9 @@ Access the email account of the AWS account owner to accept the organization inv
 
 You can also log in to the invited account, navigate to the AWS Organizations console and the invitation will be there waiting for you.
 ![Accept org invitation via console](./image_assets/12acceptinvitefromawsconsole.png)
+
+Each secondary account needs to accept the invitation.
+![All invites accepted](./image_assets/14all_invites_accepted.png)
 
 Success! Once every account is part of the organization, you are ready to create your ✨ Identity Center ✨.
 
